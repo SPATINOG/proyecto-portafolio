@@ -133,3 +133,28 @@ html {
       border: 2px solid blue;
   }
   
+
+
+  .header-wrapper {
+    display: flex; 
+    width: 90vw;
+    margin: auto;
+    border: 2px solid peru; 
+  }
+  
+  .header-wrapper > * {
+    flex: auto;
+  }
+
+  .nav ul{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    
+  }
+
+  .nav li {
+    padding-top: 10px;
+    padding-left: 40px;
+}
+  
