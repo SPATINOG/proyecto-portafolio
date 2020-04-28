@@ -1,54 +1,43 @@
 <!DOCTYPE html>
-<html lang="es-MX">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sebastián Patiño | Portafolio</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2322424/reset.css"
+      rel="stylesheet"
+    />
+    <link href="./css/style.css" rel="stylesheet" />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sebastian Patiño | Visual Designer</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-</head>
-
-<body> 
-
-    <header class="header-wrapper"> 
-
-        <h1>Sebastian Patiño</h1>
-
-        <nav class="nav">    
-            <ul>
-                <li> Work </li>
-                <li> Archive </li>
-                <li> Contact </li>
-            </ul>
-        </nav>
-
-    </header>
-
-<main class="main"> 
-
-        <ul class="slider" id="slider-home">
-            <li>
-                <img src="assets/images/Imagen 11 1.jpg" alt="Imagen 13 1.jpg"> 
-            </li>
+  <body class="site-container">
+    <div class="top-container">
+      <header>
+        <h1 class="site-name">Sebastián Patiño</h1>
+      </header>
+      <nav id="nav-toggle">
+        <p>Menu</p>
+        <ul class="menu" hidden>
+          <li><a href="/work.html">Work</a></li>
+          <li><a href="/archive.html">Archive</a></li>
+          <li><a href="/contact.html">Contact</a></li>
         </ul>
-
-</main>
-
-<footer> 
-
-    <div>
-        <a href="http://instagramsebastianpatino.com">
-            <img src="images/iconoinstagram.png" alt="Portafolio spg">
-        </a>  
-
-        <a href="http://facebooksebastianpatino.com">
-            <img src="images/iconofacebook.png" alt="Portafolio spg">
-        </a>  
-
+      </nav>
     </div>
 
-</footer>
-</body>
+    <div id="showcase" class="project-showcase">
+      <img src="https://picsum.photos/300/240" alt="placeholder" />
+      <img src="https://picsum.photos/300/240" alt="placeholder" />
+      <img src="https://picsum.photos/300/240" alt="placeholder" />
+      <!-- Esto solo es para ver el UI -->
+    </div>
+    <div class="titulo-proyecto-container">
+      <h3 class="titulo-proyecto">Proyecto XYZ</h3>
+    </div>
+  </body>
 </html>

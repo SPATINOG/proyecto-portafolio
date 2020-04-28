@@ -2,15 +2,13 @@
 *    Variables
 *****************************************/
 :root {
-  /* Colors */
-  --background: #ffffff;
-  --primary: #000000;
-  /* Typography */
-  --font-family: 'Roboto', sans-serif;
+  --white: #ffffff;
+  --black: #000000;
+  --primary: #0366ee;
+  --link: #0000ee;
+  --hover: #551a8b;
+  --font-family: "Roboto", sans-serif;
 }
-
-/* Resets */
-html{box-sizing:border-box}*,::after,::before{box-sizing:inherit}blockquote,body,figure,h1,h2,h3,h4,h5,h6,hr,li,ol,pre,ul{margin:0;padding:0}ul{list-style:none}button,input,select,textarea{color:inherit;font:inherit;letter-spacing:inherit}button,input,textarea{border:1px solid gray}button{border-radius:0;padding:.75em 1em;background-color:transparent}button *{pointer-events:none}embed,iframe,img,object,video{display:block;max-width:100%}table{table-layout:fixed;width:100%}[hidden]{display:none}noscript{display:block;margin-bottom:1em;margin-top:1em}
 
 /****************************************
 *    Base - Elements
@@ -20,156 +18,123 @@ html {
 }
 
 body {
-  color: var(--primary);
-  background: var(--background);
-  font-family: var(--font-family);
+  color: var(--black);
+  background: var(--white);
   font-size: 100%;
-  font-size: 18px;
+  font-size: calc(16px + (20 - 16) * ((100vw - 720px) / (1400 - 720)));
+  font-family: var(--font-family);
 }
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
-/* Tipografía */
-p {
-  font-size: 1em;
+a:hover,
+a:active {
+  color: var(--hover);
+  text-decoration: underline;
 }
 
-h1 {
-  font-size: 2em;
-  line-height: 1.25;
-}
-
-h2 {
-  font-size: 1.6em;
-  line-height: 1.2;
-}
-
-h3 {
-  font-size: 1.4em;
-  line-height: 1.15;
-}
-
-h4 {
-  font-size: 1.2em;
-  line-height: 1;
-}
-
-/* Tipografía responsiva */
-/* https://css-tricks.com/snippets/css/fluid-typography */
-body {
-  font-size: calc(16px + (20 - 16) * ((100vw - 720px) / (1400 - 720)));
+ul {
+  list-style: none;
+  padding-left: 0;
 }
 
 /****************************************
-*    Componentes
+*    Components - Common
 *****************************************/
- 
-/* header */
-.header-wrapper {
-  height: 10vh;
-  display: flex;
-  margin: auto;
+/* Layout */
+.site-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: max-content 1fr;
+  row-gap: 2em;
 }
 
-.header-wrapper h1, .header-wrapper .nav {
-  flex: auto;
+/* Header */
+.site-name {
+  font-size: 15px;
+}
+
+/* Top container */
+/*
+.top-container {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-}
-
-.header-wrapper h1{
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-}
-
-.header-wrapper > * {
-  display: flex;
-  justify-content: center;
-}
-.header-wrapper h1 {
-  display: flex;
-  justify-content: flex-start;
-  padding-left: 5vw;
-}
-.header-wrapper .nav ul li {
-  padding: 0 10px;
-}
-
-/* nav */
-.nav ul{
-  display: flex;
- /* height: 100%;
-  */
-  justify-content: center;
-}
-
-/* slider */
-
-.slider {
-  display: flex;
-  justify-content: center;
-}
-
-/* 
-
-header.header-wrapper {
-
-}
-
-header.header-wrapper h1 {
-
-}
-
-
-
-header.header-wrapper nav.nav {
-
-}
-
-header.header-wrapper nav.nav ul {
-
-}
-
-header.header-wrapper nav.nav ul li {
-
-}
-
-
-
-main.main {
-
-}
-
-main.main ul#slider-home.slider {
-
-}
-
-main.main ul#slider-home.slider li {
-
-}
-
-main.main ul#slider-home.slider li img {
-
-}
-
-
-
-footer {
-
-}
-
-footer div {
-
-}
-
-footer div a {
-
-}
-
-footer div a img {
-
+  min-width: 80vw;
+  margin: 2em auto 1em;
 }
 */
+.top-container {
+  min-width: 80vw;
+  margin: 2em auto;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 2fr 1fr;
+}
+
+header {
+  grid-column: 1;
+}
+
+nav {
+  grid-column: 2;
+}
+
+/* Showcase */
+.project-showcase {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.project-showcase img:not(:first-child) {
+  padding-top: 2em;
+}
+
+/* Desktop */
+@media screen and (min-width: 40em) {
+  .site-name {
+    font-size: 18px;
+  }
+  .project-showcase {
+    flex-direction: row;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  .project-showcase img {
+    min-width: 100%;
+    width: 1197px;
+    height: 697px;
+    overflow: hidden;
+  }
+
+  .titulo-proyecto-container {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .titulo-proyecto-container h3 {
+    position: absolute;
+    right: 0;
+  }
+}
+
+/****************************************
+*    Helpers
+*****************************************/
+.centrar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ayuda visual temporal */
+.outline {
+  border: 2px dotted blue;
+}
