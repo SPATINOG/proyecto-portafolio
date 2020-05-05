@@ -125,6 +125,10 @@ nav {
   }
 }
 
+#toggle {
+  padding-left: 10px;
+}
+
 /****************************************
 *    Work
 *****************************************/
@@ -160,6 +164,21 @@ nav {
     grid-column: 1/4;
     grid-row: 6/7;
   }
+}
+
+/****************************************
+*    Proyecto
+*****************************************/
+.proyecto_container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-column-gap: 2em;
+  max-width: 80%;
+  margin: -2em auto 0;
+}
+
+.proyecto_container img {
+  margin-top: 20px;
 }
 
 /****************************************
