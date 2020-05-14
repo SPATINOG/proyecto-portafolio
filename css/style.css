@@ -50,6 +50,8 @@ ul {
   grid-template-columns: 1fr;
   grid-template-rows: max-content 1fr;
   row-gap: 2em;
+  width: 80vw;
+  margin: 0 auto;
 }
 
 /* Header */
@@ -180,6 +182,44 @@ nav {
 .proyecto_container img {
   margin-top: 20px;
 }
+
+/****************************************
+*    Contacto
+*****************************************/
+.contacto-about,
+.contacto-datos {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+}
+
+.contacto-about p,
+.contacto-datos p {
+  border-top: 1px solid black;
+  /* Top Right Bottom Left = como manecillas del reloj */
+  padding: 1em 0 0 2em;
+  margin-top: -0.06em;
+}
+
+@media screen and (min-width: 40em) {
+  .contacto-about,
+  .contacto-datos {
+    grid-template-columns: 200px 1fr;
+    min-height: 300px;
+  }
+  .contacto-about h2,
+  .contacto-datos h2 {
+    font-size: 2em;
+    font-weight: bold;
+  }
+  .contacto-about p,
+  .contacto-datos p {
+    padding-left: 9em;
+  }
+}
+
+/****************************************
+*    Archivo
+*****************************************/
 
 /****************************************
 *    Helpers
