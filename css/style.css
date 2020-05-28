@@ -285,23 +285,31 @@ button:last-child {
 *    Archivo
 *****************************************/
 .archive-list-container {
-  border: 1px solid black;
   display: grid;
-  grid-template-columns: 1fr 5fr;
+  grid-template-columns: 1fr 4fr;
+  justify-content: center;
+  max-width: 95vw;
+  margin: 0 auto;
 }
 
 .archive-list-nav {
-  border: 1px solid rgb(187, 33, 33);
   grid-column: 1/2;
 }
 
+.archive-list-nav a {
+  color: black;
+}
+
+.archive-list-nav a:hover {
+  opacity: 0.8;
+  text-decoration: none;
+}
+
 .archive-list-items {
-  border: 1px solid rgb(11, 56, 182);
   grid-column: 2/3;
 }
 
 table {
-  border: 1px solid #ccc;
   border-collapse: collapse;
   margin: 0;
   padding: 0;
@@ -315,14 +323,23 @@ table caption {
 }
 
 table tr {
-  background-color: #f8f8f8;
-  border: 1px solid #ddd;
   padding: 0.35em;
+  border-top: 1px solid black;
 }
 
 table th,
 table td {
-  padding: 0.625em;
+  padding: 0.625em 0;
+  text-align: left;
+}
+
+table th[data-label="Year Heading"],
+table td[data-label="Year"] {
+  text-align: right;
+}
+
+table th[data-label="Media Heading"],
+table td[data-label="Media"] {
   text-align: center;
 }
 
